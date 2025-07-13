@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JACKBOYS // MAIN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.cactus {
+      background-color: #0f0f08;
+      color: #a4c639;
+    }
+    body.cactus .card {
+      background-color: #1d1d12;
+      border-color: #a4c639;
+      box-shadow: 0 0 20px #a4c639;
+    }
+    body.cactus h1 {
+      color: #c1e44d;
+      text-shadow: 0 0 20px #c1e44d;
+    }
+    h1 {
+      color: #a4c639;
+      margin-bottom: 40px;
+      text-shadow: 0 0 15px #a4c639;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .theme-toggle {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    .theme-toggle button {
+      padding: 8px 16px;
+      background: #000;
+      border: 2px solid #a4c639;
+      color: #a4c639;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    .theme-toggle button:hover {
+      background: #a4c639;
+      color: #000;
+    }
+    .theme-toggle button img {
+      height: 20px;
+      vertical-align: middle;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1200px;
+    }
+    .card {
+      background-color: #111;
+      border: 2px solid #333;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #222;
+      text-align: center;
+      transition: 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s forwards;
+    }
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+    .card:nth-child(4) { animation-delay: 0.8s; }
+    .card:nth-child(5) { animation-delay: 1s; }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .card h3 {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      color: #a4c639;
+    }
+    .card p {
+      font-size: 0.9em;
+      color: #ccc;
+    }
+    .card audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .wiki {
+      margin-top: 50px;
+      max-width: 900px;
+      padding: 30px;
+      background-color: #111;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #222;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .wiki h2 {
+      color: #a4c639;
+      margin-bottom: 20px;
+    }
+    .wiki p {
+      margin-bottom: 15px;
+      line-height: 1.5;
+      color: #ccc;
+    }
+    .back-btn {
+      margin-top: 40px;
+      padding: 12px 28px;
+      font-size: 1em;
+      color: #000;
+      background-color: #a4c639;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 0 10px #a4c639;
+      transition: 0.3s;
+    }
+    .back-btn:hover {
+      background-color: #c1e44d;
+      box-shadow: 0 0 20px #c1e44d;
+    }
+    .smoke {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.25;
+      object-fit: cover;
+    }
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 10px;
+      }
+      h1 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+        padding: 0 10px;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .card {
+        padding: 12px;
+      }
+      .card h3 {
+        font-size: 1em;
+      }
+      .card p {
+        font-size: 0.85em;
+      }
+      .back-btn {
+        padding: 10px 22px;
+        font-size: 0.9em;
+      }
+    }
+    @media (max-width: 600px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  h1 {
+    font-size: 1.6em;
+    margin-bottom: 25px;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .theme-toggle {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .theme-toggle button {
+    width: 100%;
+    font-size: 1em;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .card h3 {
+    font-size: 1em;
+  }
+
+  .card p {
+    font-size: 0.85em;
+  }
+
+  .player img {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .wiki {
+    padding: 20px;
+  }
+
+  .wiki h2 {
+    font-size: 1.2em;
+  }
+
+  .wiki p {
+    font-size: 0.9em;
+  }
+
+  .back-btn {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    margin-bottom: 30px;
+  }
+}
+  </style>
+</head>
+<body>
+  <img src="images/20593.gif" class="smoke" alt="Smoke Effect">
+  <div class="theme-toggle">
+    <button onclick="setTheme('dark')">🌑 DARK MODE</button>
+    <button onclick="setTheme('cactus')">
+      <img src="https://i.ebayimg.com/images/g/rwMAAOSwmQRkG28S/s-l1200.jpg" alt="Cactus Jack">
+    </button>
+  </div>
+  <h1>JACKBOYS // RELOADED</h1>
+  <div class="grid">
+    <div class="card">
+      <img src="images/jackboys-org.jpg" alt="Classic Cover">
+      <h3>Classic Cover</h3>
+      <p>The original JACKBOYS cover — raw, iconic, and chaotic. Where it all started.</p>
+      <audio controls><source src="music/gatti.mp3" type="audio/mp4"></audio>
+    </div>
+    <div class="card">
+      <img src="images/neon_rally_chaos.jpg" alt="Neon Rally Chaos">
+      <h3>Neon Rally Chaos</h3>
+      <p>Rally cars and glowing masks ripping the night under a purple sky. Pure HOOD chaos.</p>
+      <audio controls><source src="music/gang.mp3" type="audio/mp4"></audio>
+    </div>
+    <div class="card">
+      <img src="images/trippy_travis.jpg" alt="Trippy Travis">
+      <h3>Trippy Travis</h3>
+      <p>Action-figure Travis mid-air in yellow cargos. Surreal and soaked in RODEO vibes.</p>
+      <audio controls><source src="music/highest.mp3" type="audio/mp4"></audio>
+    </div>
+    <div class="card">
+      <img src="images/desert_escape.jpg" alt="Desert Escape">
+      <h3>Desert Escape</h3>
+      <p>Masks on, cars glowing, dusk horizon — the JACKBOYS cruising through Houston heat.</p>
+      <audio controls><source src="music/out-west.mp3" type="audio/mp4"></audio>
+    </div>
+    <div class="card">
+      <img src="images/takeover.jpg" alt="Miniature Takeover">
+      <h3>Miniature Takeover</h3>
+      <p>Dim-lit toy cars, street chaos energy. It’s a miniature JACKBOYS invasion.</p>
+      <audio controls><source src="music/what-to.mp3" type="audio/mp4"></audio>
+    </div>
+  </div>
+  <div class="wiki">
+    <h2>JACKBOYS WIKI</h2>
+    <p><strong>Travis Scott</strong> – The mastermind behind the JACKBOYS. Visionary, producer, rapper. Chaos architect.</p>
+    <p><strong>Don Toliver</strong> – Melodic genius. Wavy vocals, hypnotic hooks. Cactus vibes certified.</p>
+    <p><strong>Sheck Wes</strong> – Wild energy. "Mo Bamba" legend. JACKBOYS street enforcer.</p>
+    <p><strong>Luxury Tax</strong> – Underground chaos. Rough, raw, and ready.</p>
+    <p><strong>Chase B</strong> – The DJ commander. Always steering the sonic ship.</p>
+  </div>
+  <a href="index.html" class="back-btn">RETURN TO ENTRY</a>
+  <script>
+    function setTheme(mode) {
+      document.body.className = mode === 'cactus' ? 'cactus' : '';
+    }
+  </script>
+</body>
+</html>

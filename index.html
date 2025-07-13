@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JACKBOYS BY ONESSSTARR // ENTRY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }body {
+  background-color: #000;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.video-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.25) contrast(1.1) saturate(1.2);
+}
+
+.overlay {
+  text-align: center;
+  z-index: 2;
+  animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+  font-size: 3em;
+  color: #a4c639; /* кактусовая оливка */
+  text-shadow: 0 0 20px #a4c639, 0 0 60px #333;
+}
+
+.enter-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 40px;
+  font-size: 1.2em;
+  color: #000;
+  border: 2px solid #a4c639;
+  background: #a4c639;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 0 15px #a4c639;
+  transition: 0.3s;
+}
+
+.enter-btn:hover {
+  background: #c1e44d;
+  color: #000;
+  box-shadow: 0 0 30px #c1e44d;
+}
+
+audio {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 2em; padding: 0 20px; }
+  .enter-btn { font-size: 1em; padding: 12px 30px; }
+  .video-bg { filter: brightness(0.2); }
+}
+
+  </style>
+</head>
+<body>
+  <img src="https://i.makeagif.com/media/9-23-2021/2BQO4I.gif" class="video-bg" alt="GATTI gif background">  <div class="overlay">
+    <h1>WELCOME TO JACKBOYS </h1>
+    <a href="main.html" class="enter-btn">ENTER</a>
+  </div>  <audio id="theme" autoplay loop>
+  <source src="./music/gatti.mp3" type="audio/mp4">
+</audio>
